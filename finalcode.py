@@ -2,53 +2,52 @@ from collections import deque
 
 def infecting_patients(M,N,grid: list[list[int]]) -> int:
     q = deque()
-    time, fresh = 0,0
-
-    #ROWS, COLS = len(grid), len(grid[0])
+    #time to keep track of time which has passed
+    #uninfected to keep track of how many uninfected patients at any given point in time
+    time, uninfected = 0,0
 
     if M > 1000 or N > 1000:
         return -1
 
     for r in range(M):
         for c in range(N):
+            #if any cell in the grid is uninfected, increment the number of uninfected
             if grid[r][c] == 1:
-                fresh += 1
+                uninfected += 1
+            #if any cell is infected, add coordinates to queue to run multi BFS
             if grid[r][c] == 2:
                 q.append([r,c])
 
+    #4 directions to move in
     directions = [[0,1],[0,-1],[1,0],[-1,0]]
 
-    while q and fresh>0:
+    #while queue is empty and uninfected=0, then the loop will stop
+    while q and uninfected>0:
         for i in range(len(q)):
+            #popleft to pop the equivalent of the length of q,
+            #while appending the adjacent patients which will
+            #become infected
             r,c = q.popleft()
+            #go through the 4 adjacent positions of the infected victim
             for dr,dc in directions:
+                #getting coordinate of adjacent spots
                 row, col = dr + r, dc + c
-                # if in bounds and fresh, make rotten
+                # if in bounds and uninfected patient, make the patient infected
+                # if out of bounds or is not a uninfected patient, continue the loop
                 if (row < 0 or row == len(grid) or
                     col < 0 or col == len(grid[0]) or
                     grid[row][col] != 1):
                     continue
                 grid[row][col] = 2
                 q.append([row,col])
-                fresh -= 1
+                #decrement the number of uninfected patients
+                uninfected -= 1
+        #loop is executed, increment time by 1
         time += 1
-    return time if fresh == 0 else -1
+    #return time if every single patient becomes infected
+    return time if uninfected == 0 else -1
 
-
-if __name__ == "__main__":
-
-    # M = 3
-    # N = 5
-    # grid = [[2, 1, 0, 2, 1],
-    #     [1, 0, 1, 2, 1]
-    #     [1, 0, 0, 2, 1]]
-
-    M = 1
-    N = 1
-    grid = [[1]]
-
-    print("Max time incurred: ", infecting_patients(M,N,grid))
-
+#running unit tests
 import unittest
 
 class TestInfectingPatients(unittest.TestCase):
