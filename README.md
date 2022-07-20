@@ -6,7 +6,7 @@ This repo explains the code done as well as carries out the relevant unit tests 
 ## Usage
 ```python
 # check whether unit tests are running as intended
-python -m  unittest finalcode.py
+python -m unittest finalcode.py
 ```
 
 ## Explanation of Algorithm
