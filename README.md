@@ -4,9 +4,9 @@ Technical Test - Telepathy Labs
 This repo explains the code done as well as carries out the relevant unit tests to ensure the code is running as intended.
 
 # Files
-README.md - contains information about the project
-telepathy_labs.ipynb - code in ipynb format
-telepathy_labs.py - code in py format, along with unit tests
+1. README.md - contains information about the project
+2. telepathy_labs.ipynb - code in ipynb format
+3. telepathy_labs.py - code in py format, along with unit tests
 
 ## Usage
 ```python
