@@ -1,17 +1,16 @@
 # Telepathy_Labs
 Technical Test - Telepathy Labs
 
-This repo explains the code done as well as carries out the relevant unit tests to ensure the code is running as intended.
+This repo explains the code done for the Telepathy Labs Algorithm Test as well as carries out the relevant unit tests to ensure the code is running as intended.
 
-# Files
+# File Information
 1. README.md - contains information about the project
-2. telepathy_labs.ipynb - code in ipynb format
-3. telepathy_labs.py - code in py format, along with unit tests
+2. telepathy_labs.py - code in py format, with unit tests
 
 ## Usage
 ```python
-# check whether unit tests are running as intended
-python -m unittest finalcode.py
+# check whether unit tests are running as intended in telepathy_labs.py file
+python -m unittest telepathy_labs.py
 ```
 
 ## Explanation of Algorithm
@@ -21,11 +20,11 @@ Approach: The idea is to use Breadth First Search. The condition of patients get
  
 Algorithm: 
 Create an empty queue q. 
-Find all infected victims and enqueue them to q. Also, enqueue a delimiter to indicate the beginning of the next time frame.
-Run a loop while q is not empty
-Do following while delimiter in q is not reached
-Dequeue a patient from the queue, infect all adjacent patients. While infecting the adjacent, make sure that the time frame is incremented only once. And the time frame is not incremented if there are no adjacent patients.
-Dequeue the old delimiter and enqueue a new delimiter. The victims infected in the previous time frame lie between the two delimiters.
+Find all infected victims and enqueue them to q. Also, keep a time variable to keep track of time passed
+Run a loop while q is not empty and number of uninfected patients is more than 0
+Dequeue a patient from the queue (popleft), infect all adjacent patients. While infecting the adjacent, make sure that the time frame is incremented only once. And the time frame is not incremented if there are no adjacent patients.
+Append newly infected patients to queue and continue till while loop breaks
+Return time if every single patient becomes infected, else return -1
 
 ## Contributers
 #### Bhavesh Chainani
