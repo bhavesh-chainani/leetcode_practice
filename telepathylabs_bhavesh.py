@@ -5,11 +5,11 @@ Approach: The idea is to use Breadth First Search. The condition of patients get
  
 Algorithm: 
 Create an empty queue q. 
-Find all infected victims and enqueue them to q. Also, enqueue a delimiter to indicate the beginning of the next time frame.
-Run a loop while q is not empty
-Do following while delimiter in q is not reached
-Dequeue a patient from the queue, infect all adjacent patients. While infecting the adjacent, make sure that the time frame is incremented only once. And the time frame is not incremented if there are no adjacent patients.
-Dequeue the old delimiter and enqueue a new delimiter. The victims infected in the previous time frame lie between the two delimiters.
+Find all infected victims and enqueue them to q. Also, keep a time variable to keep track of time passed
+Run a loop while q is not empty and number of uninfected patients is more than 0
+Dequeue a patient from the queue (popleft), infect all adjacent patients. While infecting the adjacent, make sure that the time frame is incremented only once. And the time frame is not incremented if there are no adjacent patients.
+Append newly infected patients to queue and continue till while loop breaks
+Return time if every single patient becomes infected, else return -1
 '''
 
 from collections import deque
@@ -35,7 +35,7 @@ def infecting_patients(M,N,grid: list[list[int]]) -> int:
     #4 directions to move in
     directions = [[0,1],[0,-1],[1,0],[-1,0]]
 
-    #while queue is empty and uninfected=0, then the loop will stop
+    #if queue is empty and uninfected=0, then the loop will stop
     while q and uninfected>0:
         for i in range(len(q)):
             #popleft to pop the equivalent of the length of q,

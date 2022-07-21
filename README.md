@@ -5,7 +5,7 @@ This repo explains the code done for the Telepathy Labs Algorithm Test as well a
 
 # File Information
 1. README.md - contains information about the project
-2. telepathy_labs.py - code in py format, with unit tests
+2. telepathylabs_bhavesh.py - code in py format, with unit tests
 
 ## Usage
 ```python
