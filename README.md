@@ -9,14 +9,14 @@ This repo explains the code done for the Telepathy Labs Algorithm Test as well a
 
 ## Usage
 ```python
-# check whether unit tests are running as intended in telepathy_labs.py file
+# check whether unit tests are running as intended in telepathylabs_bhavesh.py file
 python -m unittest telepathylabs_bhavesh.py
 ```
 
 ## Explanation of Algorithm
 Efficient Solution 
 
-Approach: The idea is to use Breadth First Search. The condition of patients getting infected is when they come in contact with other infected patients. This is similar to breadth-first search where the graph is divided into layers or circles and the search is done from lower or closer layers to deeper or higher layers.  To find the elements whose values are no the whole matrix had to be traversed.
+Approach: The idea is to use Breadth First Search. The condition of patients getting infected is when they come in contact with other infected patients. This is similar to breadth-first search where the graph is divided into layers or circles and the search is done from lower or closer layers to deeper or higher layers.  To find the elements whose values are 2 the whole matrix had to be traversed.
  
 Algorithm: 
 Create an empty queue q. 
