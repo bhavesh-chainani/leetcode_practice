@@ -10,7 +10,7 @@ This repo explains the code done for the Telepathy Labs Algorithm Test as well a
 ## Usage
 ```python
 # check whether unit tests are running as intended in telepathy_labs.py file
-python -m unittest telepathy_labs.py
+python -m unittest telepathylabs_bhavesh.py
 ```
 
 ## Explanation of Algorithm
