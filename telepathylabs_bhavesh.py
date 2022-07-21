@@ -1,7 +1,7 @@
 '''
 Explanation of Algorithm
 
-Approach: The idea is to use Breadth First Search. The condition of patients getting infected is when they come in contact with other infected patients. This is similar to breadth-first search where the graph is divided into layers or circles and the search is done from lower or closer layers to deeper or higher layers.  To find the elements whose values are no the whole matrix had to be traversed.
+Approach: The idea is to use Breadth First Search. The condition of patients getting infected is when they come in contact with other infected patients. This is similar to breadth-first search where the graph is divided into layers or circles and the search is done from lower or closer layers to deeper or higher layers.  To find the elements whose values are 2 the whole matrix had to be traversed.
 
 '''
 
