@@ -1,7 +1,7 @@
-# Telepathy_Labs
-Technical Test - Telepathy Labs
+# LeetCode Question
+Technical Test - Rotting Orange
 
-This repo explains the code done for the Telepathy Labs Algorithm Test as well as carries out the relevant unit tests to ensure the code is running as intended.
+This repo explains the code done for the Algorithm Test (Rotting Orange) as well as carries out the relevant unit tests to ensure the code is running as intended.
 
 # File Information
 1. README.md - contains information about the project
